@@ -1,0 +1,37 @@
+{
+  "name": "webpackbug",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devserver": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" ts-node ./webpack.devserver.ts",
+    "build": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack --config webpack.config.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/html-webpack-plugin": "^3.2.3",
+    "@types/node": "^14.0.23",
+    "@types/webpack": "^4.41.21",
+    "@types/webpack-dev-server": "^3.11.0",
+    "@types/webpack-merge": "^4.1.5",
+    "cross-env": "^7.0.2",
+    "css-loader": "^3.6.0",
+    "html-webpack-plugin": "^4.3.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.2",
+    "scss-loader": "0.0.1",
+    "style-loader": "^1.2.1",
+    "ts-loader": "^8.0.1",
+    "ts-node": "^8.10.2",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.7",
+    "webpack": "^4.43.0",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.0.9"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.12"
+  }
+}
