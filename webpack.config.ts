@@ -5,12 +5,12 @@ import { resolve } from "path";
 const config: webpack.Configuration = {
   mode: "development",
   devtool: "source-map",
+  target: "web",
   output: {
     path: resolve(__dirname, "./dist"),
     filename: "js/[name].js?[contenthash]",
     chunkFilename: "js/[name].chunk.js?[contenthash]",
     devtoolNamespace: "MYNAMESPACE",
-    jsonpFunction: "webpackJsonpMYNAMESPACE",
   },
   entry: {
     app: "./src/app",
@@ -20,12 +20,15 @@ const config: webpack.Configuration = {
   },
   optimization: {
     runtimeChunk: "single",
+    removeEmptyChunks: true,
     splitChunks: {
-      minSize: 0,
+      chunks: "all",
       cacheGroups: {
+        default: false,
+        defaultVendors: false,
         vendors: {
           name: "vendors",
-          chunks: "all",
+          idHint: "vendors",
           minChunks: 1,
           test: /[\\/]node_modules[\\/]/,
         },

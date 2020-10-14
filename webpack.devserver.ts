@@ -8,11 +8,11 @@ const serverConfig = merge(config, {
     filename: "js/[name].js?[hash]",
     chunkFilename: "js/[name].chunk.js?[hash]",
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  target: "web"
 });
 const compiler = webpack(serverConfig);
 const srv = new devServer(compiler, {
-  hot: true,
+  hot: false,
   publicPath: "/",
   contentBase: resolve(__dirname, "./dist"),
   port: 56789,
